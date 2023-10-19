@@ -64,6 +64,67 @@ GLfloat backgroundColor[] = { 0.0, 0.0, 0.0 };  // Warna latar belakang (hitam)
 GLfloat tableColor1[] = { 250.0, 245.0, 239.0 }; // Warna 1
 GLfloat tableColor2[] = { 0.36, 0.18, 0.00 };  // Warna 2
 
+void changetableColor(unsigned char key, int x, int y) {
+    switch (key) {
+    //Color 1
+    case 'q':  // Tombol 'r' untuk coklat
+        tableColor1[0] = 0.36;
+        tableColor1[1] = 0.18;
+        tableColor1[2] = 0.00;
+        break;
+    case 'w':  // Tombol 'g' untuk hijau
+        tableColor1[0] = 0.0;
+        tableColor1[1] = 1.0;
+        tableColor1[2] = 0.0;
+        break;
+    case 'e':  // Tombol 'b' untuk biru
+        tableColor1[0] = 0.0;
+        tableColor1[1] = 0.0;
+        tableColor1[2] = 1.0;
+        break;
+    case 'r':  // Tombol 'w' untuk merah
+        tableColor1[0] = 1.0;
+        tableColor1[1] = 0.0;
+        tableColor1[2] = 0.0;
+        break;
+
+    case 't':  // Tombol 'w' untuk putih
+        tableColor1[0] = 250.0;
+        tableColor1[1] = 245.0;
+        tableColor1[2] = 239.0;
+        break;
+
+    //Color 2
+    case 'a':  // Tombol 'r' untuk coklat
+        tableColor2[0] = 0.36;
+        tableColor2[1] = 0.18;
+        tableColor2[2] = 0.00;
+        break;
+    case 's':  // Tombol 'g' untuk hijau
+        tableColor2[0] = 0.0;
+        tableColor2[1] = 1.0;
+        tableColor2[2] = 0.0;
+        break;
+    case 'd':  // Tombol 'b' untuk biru
+        tableColor2[0] = 0.0;
+        tableColor2[1] = 0.0;
+        tableColor2[2] = 1.0;
+        break;
+    case 'f':  // Tombol 'w' untuk merah
+        tableColor2[0] = 1.0;
+        tableColor2[1] = 0.0;
+        tableColor2[2] = 0.0;
+        break;
+
+    case 'g':  // Tombol 'w' untuk putih
+        tableColor2[0] = 250.0;
+        tableColor2[1] = 245.0;
+        tableColor2[2] = 239.0;
+        break;
+    }
+    glutPostRedisplay();
+}
+
 //Coding untuk membuat object
 void tampilan(void) {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -680,6 +741,7 @@ void tampilan(void) {
     glVertex3f(-45, -53, -20);
     glEnd();
 
+    glColor3fv(tableColor1);
     glutSwapBuffers();
 }
 
@@ -694,5 +756,9 @@ int main(int argc, char** argv) {
     glutMouseFunc(mouse);
     glutMotionFunc(mouseMotion);
     glutReshapeFunc(ukur);
+
+    // Callback fungsi untuk mengubah warna latar belakang
+    glutKeyboardFunc(changetableColor);
+
     glutMainLoop();
 }
