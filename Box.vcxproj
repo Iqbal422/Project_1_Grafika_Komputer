@@ -16,7 +16,7 @@ float xdiff = 0;
 float ydiff = 0;
 bool mouseDown = false;
 
-//Deklarasi pengaturan lembaran kerja agar object 3d yang kita buat saat diputar atau di geser tidak kemana mana
+//Deklarasi pengaturan lembar kerja agar object 3d yang dibuat saat diputar atau di geser tidak kemana mana
 void ukur(int lebar, int tinggi) {
     if (tinggi == 0) tinggi = 1;
     glMatrixMode(GL_PROJECTION);
