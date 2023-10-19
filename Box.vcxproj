@@ -1,156 +1,685 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <ItemGroup Label="ProjectConfigurations">
-    <ProjectConfiguration Include="Debug|Win32">
-      <Configuration>Debug</Configuration>
-      <Platform>Win32</Platform>
-    </ProjectConfiguration>
-    <ProjectConfiguration Include="Release|Win32">
-      <Configuration>Release</Configuration>
-      <Platform>Win32</Platform>
-    </ProjectConfiguration>
-    <ProjectConfiguration Include="Debug|x64">
-      <Configuration>Debug</Configuration>
-      <Platform>x64</Platform>
-    </ProjectConfiguration>
-    <ProjectConfiguration Include="Release|x64">
-      <Configuration>Release</Configuration>
-      <Platform>x64</Platform>
-    </ProjectConfiguration>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="box.cpp" />
-  </ItemGroup>
-  <PropertyGroup Label="Globals">
-    <ProjectGuid>{7f50d019-ba1b-4dfa-a873-06e11f5da45a}</ProjectGuid>
-    <Keyword>Win32Proj</Keyword>
-    <RootNamespace>Box</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-  </PropertyGroup>
-  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
-    <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
-    <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
-    <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
-    <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
-    <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
-    <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
-  </PropertyGroup>
-  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
-  <ImportGroup Label="ExtensionSettings">
-  </ImportGroup>
-  <ImportGroup Label="Shared">
-  </ImportGroup>
-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-  </ImportGroup>
-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-  </ImportGroup>
-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-  </ImportGroup>
-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-  </ImportGroup>
-  <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <LinkIncremental>true</LinkIncremental>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <LinkIncremental>true</LinkIncremental>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <LinkIncremental>false</LinkIncremental>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <LinkIncremental>false</LinkIncremental>
-  </PropertyGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <ClCompile>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
-      <WarningLevel>Level3</WarningLevel>
-      <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\OpenGLwrappers\glm-0.9.7.5\glm;C:\OpenGLwrappers\glew-1.10.0-win32\glew-1.10.0\include;C:\OpenGLwrappers\freeglut-MSVC-2.8.1-1.mp\freeglut\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-    </ClCompile>
-    <Link>
-      <SubSystem>Console</SubSystem>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\OpenGLwrappers\glew-1.10.0-win32\glew-1.10.0\lib\Release\Win32;C:\OpenGLwrappers\freeglut-MSVC-2.8.1-1.mp\freeglut\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glew32.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-    </Link>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <ClCompile>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
-      <WarningLevel>Level3</WarningLevel>
-      <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-    </ClCompile>
-    <Link>
-      <SubSystem>Console</SubSystem>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-    </Link>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
-      <Optimization>MaxSpeed</Optimization>
-      <FunctionLevelLinking>true</FunctionLevelLinking>
-      <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\OpenGLwrappers\glm-0.9.7.5\glm;C:\OpenGLwrappers\glew-1.10.0-win32\glew-1.10.0\include;C:\OpenGLwrappers\freeglut-MSVC-2.8.1-1.mp\freeglut\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-    </ClCompile>
-    <Link>
-      <SubSystem>Console</SubSystem>
-      <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <OptimizeReferences>true</OptimizeReferences>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\OpenGLwrappers\glew-1.10.0-win32\glew-1.10.0\lib\Release\Win32;C:\OpenGLwrappers\freeglut-MSVC-2.8.1-1.mp\freeglut\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glew32.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-    </Link>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
-      <Optimization>MaxSpeed</Optimization>
-      <FunctionLevelLinking>true</FunctionLevelLinking>
-      <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-    </ClCompile>
-    <Link>
-      <SubSystem>Console</SubSystem>
-      <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <OptimizeReferences>true</OptimizeReferences>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-    </Link>
-  </ItemDefinitionGroup>
-  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
-  <ImportGroup Label="ExtensionTargets">
-  </ImportGroup>
-</Project>
+/////////////////////////////////          
+// Kelompok :
+// 1. Mirza Ahmad Fauzan _ 5222600005
+// 2. Muhammad Iqbal Andriansyah _ 5222600006
+/////////////////////////////////
+
+#include <iostream>
+
+#include <GL/glew.h>
+#include <GL/freeglut.h> 
+
+//Deklarasi fungsi Mouse agar gambar 3d dapat diputar putar menggunakan Mouse
+float xrot = 0;
+float yrot = 0;
+float xdiff = 0;
+float ydiff = 0;
+bool mouseDown = false;
+
+//Deklarasi pengaturan lembaran kerja agar Gambar 3d yang kita buat saat diputar atau di geser tidak kemana mana
+void ukur(int lebar, int tinggi) {
+    if (tinggi == 0) tinggi = 1;
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    gluPerspective(45, lebar / tinggi, 5, 450);
+    glTranslatef(0, 0, -300);// jarak object dari lembaran kerja
+    glMatrixMode(GL_MODELVIEW);
+}
+void myinit(void) {
+    glClearColor(0.0, 0.0, 0.0, 0.0);
+    glMatrixMode(GL_PROJECTION);
+    glEnable(GL_DEPTH_TEST);
+
+    glMatrixMode(GL_MODELVIEW);
+    glPointSize(10.0);
+    glLineWidth(7.0f);
+}
+
+//Dan selanjutnya yaitu fungsi mouse
+void idle()
+{
+    if (!mouseDown)
+    {
+        xrot += 0.3;
+        yrot += 0.4;
+    }
+    glutPostRedisplay();
+}
+
+void mouse(int button, int state, int x, int y)
+{
+    if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN)
+    {
+        mouseDown = true;
+        xdiff = x - yrot;
+        ydiff = -y + xrot;
+    }
+    else
+        mouseDown = false;
+}
+
+void mouseMotion(int x, int y)
+{
+    if (mouseDown)
+    {
+        yrot = x - xdiff;
+        xrot = y + ydiff;
+        glutPostRedisplay();
+    }
+}
+
+//Dibawah ini dimulai koding untuk membuat object
+void tampilan(void) {
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glLoadIdentity();
+    gluLookAt(0, 0, 3, 0, 0, 0, 0, 1, 0);
+    glRotatef(xrot, 1, 0, 0);
+    glRotatef(yrot, 0, 1, 0);
+    glPushMatrix();
+
+
+    //ALAS MEJA
+    glBegin(GL_POLYGON);//ATAS
+    glColor3f(255, 255, 240);
+    glVertex3f(-52, 15, 58);
+    glVertex3f(52, 15, 58);
+    glVertex3f(52, 15, -28);
+    glVertex3f(-52, 15, -28);
+    glEnd();
+    glBegin(GL_POLYGON);//BAWAH
+    glColor3ub(95, 48, 0);
+    glVertex3f(-52, 14, 58);
+    glVertex3f(52, 14, 58);
+    glVertex3f(52, 14, -28);
+    glVertex3f(-52, 14, -28);
+    glEnd();
+    glBegin(GL_POLYGON);//SAMPING KANAN
+    glColor3ub(95, 48, 0);
+    glVertex3f(50, 13, 58);
+    glVertex3f(50, 15, 58);
+    glVertex3f(50, 15, -28);
+    glVertex3f(50, 13, -28);
+    glEnd();
+    glBegin(GL_POLYGON);//SAMPING KIRI
+    glColor3ub(95, 48, 0);
+    glVertex3f(-50, 13, 58);
+    glVertex3f(-50, 15, 58);
+    glVertex3f(-50, 15, -28);
+    glVertex3f(-50, 13, -28);
+    glEnd();
+    glBegin(GL_POLYGON);//DEPAN
+    glColor3ub(95, 48, 0);
+    glVertex3f(-50, 13, 58);
+    glVertex3f(-50, 15, 58);
+    glVertex3f(50, 15, 58);
+    glVertex3f(50, 13, 58);
+    glEnd();
+    glBegin(GL_POLYGON);//BELAKANG
+    glColor3ub(95, 48, 0);
+    glVertex3f(-50, 13, -28);
+    glVertex3f(-50, 15, -28);
+    glVertex3f(50, 15, -28);
+    glVertex3f(50, 13, -28);
+    glEnd();
+
+
+    //KAKI MEJA 1
+    glBegin(GL_POLYGON);//ALAS BAWAH
+    glColor3f(250, 245, 239);
+    glVertex3f(-50, -57, 55);
+    glVertex3f(-45, -57, 55);
+    glVertex3f(-45, -57, 50);
+    glVertex3f(-50, -57, 50);
+    glEnd();
+    glBegin(GL_POLYGON);//DEPAN
+    glColor3f(250, 245, 239);
+    glVertex3f(-50, 13, 55);
+    glVertex3f(-45, 13, 55);
+    glVertex3f(-45, -57, 55);
+    glVertex3f(-50, -57, 55);
+    glEnd();
+    glBegin(GL_POLYGON);//BELAKANG
+    glColor3f(250, 245, 239);
+    glVertex3f(-50, 13, 50);
+    glVertex3f(-45, 13, 50);
+    glVertex3f(-45, -57, 50);
+    glVertex3f(-50, -57, 50);
+    glEnd();
+    glBegin(GL_POLYGON);//KIRI
+    glColor3f(250, 245, 239);
+    glVertex3f(-50, 13, 55);
+    glVertex3f(-50, -57, 55);
+    glVertex3f(-50, -57, 50);
+    glVertex3f(-50, 13, 50);
+    glEnd();
+    glBegin(GL_POLYGON);//KANAN
+    glColor3f(250, 245, 239);
+    glVertex3f(-45, 13, 55);
+    glVertex3f(-45, -57, 55);
+    glVertex3f(-45, -57, 50);
+    glVertex3f(-45, 13, 50);
+    glEnd();
+
+    //KAKI MEJA 2
+    glBegin(GL_POLYGON);//ALAS BAWAH
+    glColor3f(250, 245, 239);
+    glVertex3f(50, -57, 55); 
+    glVertex3f(45, -57, 55);
+    glVertex3f(45, -57, 50); 
+    glVertex3f(50, -57, 50); 
+    glEnd();
+    glBegin(GL_POLYGON);//DEPAN
+    glColor3f(250, 245, 239);
+    glVertex3f(50, 13, 55);
+    glVertex3f(45, 13, 55);
+    glVertex3f(45, -57, 55); 
+    glVertex3f(50, -57, 55); 
+    glEnd();
+    glBegin(GL_POLYGON);//BELAKANG
+    glColor3f(250, 245, 239);
+    glVertex3f(50, 13, 50); 
+    glVertex3f(45, 13, 50); 
+    glVertex3f(45, -57, 50); 
+    glVertex3f(50, -57, 50); 
+    glEnd();
+    glBegin(GL_POLYGON);//KIRI
+    glColor3f(250, 245, 239);
+    glVertex3f(50, 13, 50); 
+    glVertex3f(50, -57, 50); 
+    glVertex3f(50, -57, 55); 
+    glVertex3f(50, 13, 55);
+    glEnd();
+    glBegin(GL_POLYGON);//KANAN
+    glColor3f(250, 245, 239);
+    glVertex3f(45, 13, 50); 
+    glVertex3f(45, -57, 50); 
+    glVertex3f(45, -57, 55); 
+    glVertex3f(45, 13, 55);
+    glEnd();
+
+    //KAKI MEJA 3
+    glBegin(GL_POLYGON);//ALAS BAWAH
+    glColor3f(250, 245, 239);
+    glVertex3f(-50, -57, -20);
+    glVertex3f(-45, -57, -20);
+    glVertex3f(-45, -57, -25);
+    glVertex3f(-50, -57, -25);
+    glEnd();
+    glBegin(GL_POLYGON);//DEPAN
+    glColor3f(250, 245, 239);
+    glVertex3f(-50, 13, -20);
+    glVertex3f(-45, 13, -20);
+    glVertex3f(-45, -57, -20);
+    glVertex3f(-50, -57, -20);
+    glEnd();
+    glBegin(GL_POLYGON);//BELAKANG
+    glColor3f(250, 245, 239);
+    glVertex3f(-50, 13, -25);
+    glVertex3f(-45, 13, -25);
+    glVertex3f(-45, -57, -25);
+    glVertex3f(-50, -57, -25);
+    glEnd();
+    glBegin(GL_POLYGON);//KIRI
+    glColor3f(250, 245, 239);
+    glVertex3f(-50, 13, -20);
+    glVertex3f(-50, -57, -20);
+    glVertex3f(-50, -57, -25);
+    glVertex3f(-50, 13, -25);
+    glEnd();
+    glBegin(GL_POLYGON);//KANAN
+    glColor3f(250, 245, 239);
+    glVertex3f(-45, 13, -20);
+    glVertex3f(-45, -57, -20);
+    glVertex3f(-45, -57, -25);
+    glVertex3f(-45, 13, -25);
+    glEnd();
+
+    //KAKI MEJA 4
+    glBegin(GL_POLYGON);//ALAS BAWAH
+    glColor3f(250, 245, 239);
+    glVertex3f(50, -57, -20);
+    glVertex3f(45, -57, -20);
+    glVertex3f(45, -57, -25);
+    glVertex3f(50, -57, -25);
+    glEnd();
+    glBegin(GL_POLYGON);//DEPAN
+    glColor3f(250, 245, 239);
+    glVertex3f(50, 13, -20);
+    glVertex3f(45, 13, -20);
+    glVertex3f(45, -57, -20);
+    glVertex3f(50, -57, -20);
+    glEnd();
+    glBegin(GL_POLYGON);//BELAKANG
+    glColor3f(250, 245, 239);
+    glVertex3f(50, 13, -25);
+    glVertex3f(45, 13, -25);
+    glVertex3f(45, -57, -25);
+    glVertex3f(50, -57, -25);
+    glEnd();
+    glBegin(GL_POLYGON);//KIRI
+    glColor3f(250, 245, 239);
+    glVertex3f(50, 13, -20);
+    glVertex3f(50, -57, -20);
+    glVertex3f(50, -57, -25);
+    glVertex3f(50, 13, -25);
+    glEnd();
+    glBegin(GL_POLYGON);//KANAN
+    glColor3f(250, 245, 239);
+    glVertex3f(45, 13, -20);
+    glVertex3f(45, -57, -20);
+    glVertex3f(45, -57, -25);
+    glVertex3f(45, 13, -25);
+    glEnd();
+
+    //Sandaran Meja
+    glBegin(GL_QUADS);
+    // Bagian belakang 
+    glColor3ub(95, 48, 0);
+    glVertex3f(-45, 9, -25);
+    glVertex3f(-45, -30, -25);
+    glVertex3f(45, -30, -25);
+    glVertex3f(45, 9, -25);
+
+    // Bagian bawah 
+    glColor3f(250, 245, 239);
+    glVertex3f(-45, -13, -25);
+    glVertex3f(45, -30, -25);
+    glVertex3f(45, -30, -20);
+    glVertex3f(-45, -13, -20);
+
+    // Bagian atas 
+    glColor3f(250, 245, 239);
+    glVertex3f(-45, 9, -25);
+    glVertex3f(45, 9, -25);
+    glVertex3f(45, 9, -20);
+    glVertex3f(-45, 9, -20);
+
+    // Bagian kiri 
+    glColor3f(250, 245, 239);
+    glVertex3f(-45, 9, -25);
+    glVertex3f(-45, -30, -25);
+    glVertex3f(-45, -30, -20);
+    glVertex3f(-45, 9, -20);
+
+    // Bagian kanan
+    glColor3f(250, 245, 239);
+    glVertex3f(45, 9, -25);
+    glVertex3f(45, -30, -25);
+    glVertex3f(45, -30, -20);
+    glVertex3f(45, 9, -20);
+
+    // Bagian depan
+    glColor3ub(95, 48, 0);
+    glVertex3f(-45, 9, -20); 
+    glVertex3f(-45, -30, -20); 
+    glVertex3f(45, -30, -20); 
+    glVertex3f(45, 9, -20); 
+    glEnd();
+
+    // Kotak kecil 1
+    glBegin(GL_QUADS);
+    glColor3f(250, 245, 239);
+    glVertex3f(-45, 9, -19.5); 
+    glVertex3f(-45, 1, -19.5); 
+    glVertex3f(-38, 1, -19.5); 
+    glVertex3f(-38, 9, -19.5); 
+    glEnd();
+
+    // Kotak kecil 2
+    glBegin(GL_QUADS);
+    glColor3f(250, 245, 239);
+    glVertex3f(38, 9, -19.5); 
+    glVertex3f(38, 1, -19.5); 
+    glVertex3f(45, 1, -19.5); 
+    glVertex3f(45, 9, -19.5); 
+    glEnd();
+
+    // Kotak kecil 3
+    glBegin(GL_QUADS);
+    glColor3f(250, 245, 239);
+    glVertex3f(-45, -30, -19.5); 
+    glVertex3f(-45, -22, -19.5); 
+    glVertex3f(-38, -22, -19.5); 
+    glVertex3f(-38, -30, -19.5); 
+    glEnd();
+
+    // Kotak kecil 4
+    glBegin(GL_QUADS);
+    glColor3f(250, 245, 239);
+    glVertex3f(38, -30, -19.5); 
+    glVertex3f(38, -22, -19.5); 
+    glVertex3f(45, -22, -19.5); 
+    glVertex3f(45, -30, -19.5); 
+    glEnd();
+
+    //Balok Kecil Atas 1
+    glBegin(GL_QUADS);
+    // Bagian depan 
+    glColor3f(250, 245, 239);
+    glVertex3f(-45, 13, -20); 
+    glVertex3f(-45, 9, -20); 
+    glVertex3f(45, 9, -20); 
+    glVertex3f(45, 13, -20); 
+
+    // Bagian belakang 
+    glColor3f(250, 245, 239);
+    glVertex3f(-45, 13, -25);
+    glVertex3f(-45, 9, -25);
+    glVertex3f(45, 9, -25);
+    glVertex3f(45, 13, -25);
+
+    // Bagian atas 
+    glColor3f(250, 245, 239);
+    glVertex3f(-45, 13, -25);
+    glVertex3f(45, 9, -25);
+    glVertex3f(45, 9, -20);
+    glVertex3f(-45, 13, -20);
+
+    // Bagian bawah 
+    glColor3f(250, 245, 239);
+    glVertex3f(-45, 9, -25);
+    glVertex3f(45, 9, -25);
+    glVertex3f(45, 9, -20);
+    glVertex3f(-45, 9, -20);
+
+    // Bagian kiri 
+    glColor3f(250, 245, 239);
+    glVertex3f(-45, 13, -25);
+    glVertex3f(-45, 9, -25);
+    glVertex3f(-45, 9, -20);
+    glVertex3f(-45, 13, -20);
+
+    // Bagian kanan 
+    glColor3f(250, 245, 239);
+    glVertex3f(45, 13, -25);
+    glVertex3f(45, 9, -25);
+    glVertex3f(45, 9, -20);
+    glVertex3f(45, 13, -20);
+    glEnd();
+
+    //Balok Kecil Atas 2
+    glBegin(GL_QUADS);
+    // Bagian depan 
+    glColor3f(250, 245, 239);
+    glVertex3f(-45, -30, -20); 
+    glVertex3f(-45, -34, -20); 
+    glVertex3f(45, -34, -20); 
+    glVertex3f(45, -30, -20); 
+
+    // Bagian belakang 
+    glColor3f(250, 245, 239);
+    glVertex3f(-45, -30, -25);
+    glVertex3f(-45, -34, -25);
+    glVertex3f(45, -34, -25);
+    glVertex3f(45, -30, -25);
+
+    // Bagian atas 
+    glColor3f(250, 245, 239);
+    glVertex3f(-50, 13, 50);
+    glVertex3f(-45, 13, 50);
+    glVertex3f(-45, 13, -20);
+    glVertex3f(-50, 13, -20);
+
+    // Bagian bawah 
+    glColor3f(250, 245, 239);
+    glVertex3f(-50, 9, 50);
+    glVertex3f(-45, 9, 50);
+    glVertex3f(-45, 9, -20);
+    glVertex3f(-50, 9, -20);
+
+    // Bagian kiri 
+    glColor3f(250, 245, 239);
+    glVertex3f(-45, 13, 50);
+    glVertex3f(-45, 9, 50);
+    glVertex3f(-45, 9, -20);
+    glVertex3f(-45, 13, -20);
+
+    // Bagian kanan 
+    glColor3f(250, 245, 239);
+    glVertex3f(-50, 13, 50);
+    glVertex3f(-50, 9, 50);
+    glVertex3f(-50, 9, -20);
+    glVertex3f(-50, 13, -20);
+    glEnd();
+
+    //Balok Kecil Atas 3
+    glBegin(GL_QUADS);
+    // Bagian depan 
+    glColor3f(250, 245, 239);
+    glVertex3f(-45, -53, 50); 
+    glVertex3f(-45, -57, 50); 
+    glVertex3f(-45, -57, -20); 
+    glVertex3f(-45, -53, -20); 
+
+    // Bagian belakang 
+    glColor3f(250, 245, 239);
+    glVertex3f(-50, -53, 50);
+    glVertex3f(-50, -57, 50);
+    glVertex3f(-50, -57, -20);
+    glVertex3f(-50, -53, -20);
+
+    // Bagian atas 
+    glColor3f(250, 245, 239);
+    glVertex3f(50, 13, 50);
+    glVertex3f(45, 13, 50);
+    glVertex3f(45, 13, -20);
+    glVertex3f(50, 13, -20);
+
+    // Bagian bawah 
+    glColor3f(250, 245, 239);
+    glVertex3f(50, 9, 50);
+    glVertex3f(45, 9, 50);
+    glVertex3f(45, 9, -20);
+    glVertex3f(50, 9, -20);
+
+    // Bagian kiri 
+    glColor3f(250, 245, 239);
+    glVertex3f(50, 13, 50);
+    glVertex3f(50, 9, 50);
+    glVertex3f(50, 9, -20);
+    glVertex3f(50, 13, -20);
+
+    // Bagian kanan 
+    glColor3f(250, 245, 239);
+    glVertex3f(45, 13, 50);
+    glVertex3f(45, 9, 50);
+    glVertex3f(45, 9, -20);
+    glVertex3f(45, 13, -20);
+
+    //Balok Kecil Atas 4
+    glBegin(GL_QUADS);
+    // Bagian depan 
+    glColor3f(250, 245, 239);
+    glVertex3f(-45, 13, 55); 
+    glVertex3f(-45, 9, 55); 
+    glVertex3f(45, 9, 55); 
+    glVertex3f(45, 13, 55); 
+
+    // Bagian belakang 
+    glColor3f(250, 245, 239);
+    glVertex3f(-45, 13, 50);
+    glVertex3f(-45, 9, 50);
+    glVertex3f(45, 9, 50);
+    glVertex3f(45, 13, 50);
+
+    // Bagian atas 
+    glColor3f(250, 245, 239);
+    glVertex3f(-45, 13, 55);
+    glVertex3f(45, 13, 55);
+    glVertex3f(45, 13, 50);
+    glVertex3f(-45, 13, 50);
+
+    // Bagian bawah 
+    glColor3f(250, 245, 239);
+    glVertex3f(-45, 9, 55);
+    glVertex3f(45, 9, 55);
+    glVertex3f(45, 9, 50);
+    glVertex3f(-45, 9, 50);
+
+    // Bagian kiri 
+    glColor3f(250, 245, 239);
+    glVertex3f(-45, 13, 55);
+    glVertex3f(-45, 9, 55);
+    glVertex3f(-45, 9, 50);
+    glVertex3f(-45, 13, 50);
+
+    // Bagian kanan 
+    glColor3f(250, 245, 239);
+    glVertex3f(45, 13, 55);
+    glVertex3f(45, 9, 55);
+    glVertex3f(45, 9, 50);
+    glVertex3f(45, 13, 50);
+    glEnd();
+
+    //Balok Kecil Bawah 1
+    glBegin(GL_QUADS);
+    // Bagian depan 
+    glColor3f(250, 245, 239);
+    glVertex3f(-45, -30, -20); 
+    glVertex3f(-45, -34, -20); 
+    glVertex3f(45, -34, -20); 
+    glVertex3f(45, -30, -20); 
+
+    // Bagian belakang 
+    glColor3f(250, 245, 239);
+    glVertex3f(-45, -30, -25);
+    glVertex3f(-45, -34, -25);
+    glVertex3f(45, -34, -25);
+    glVertex3f(45, -30, -25);
+
+    // Bagian atas 
+    glColor3f(250, 245, 239);
+    glVertex3f(-50, -53, 50);
+    glVertex3f(-45, -53, 50);
+    glVertex3f(-45, -53, -20);
+    glVertex3f(-50, -53, -20);
+
+    // Bagian bawah 
+    glColor3f(250, 245, 239);
+    glVertex3f(-50, -57, 50);
+    glVertex3f(-45, -57, 50);
+    glVertex3f(-45, -57, -20);
+    glVertex3f(-50, -57, -20);
+
+    // Bagian kiri 
+    glColor3f(250, 245, 239);
+    glVertex3f(-45, -30, -25);
+    glVertex3f(-45, -34, -25);
+    glVertex3f(-45, -34, -20);
+    glVertex3f(-45, -30, -20);
+
+    // Bagian kanan 
+    glColor3f(250, 245, 239);
+    glVertex3f(45, -30, -25);
+    glVertex3f(45, -34, -25);
+    glVertex3f(45, -34, -20);
+    glVertex3f(45, -30, -20);
+    glEnd();
+
+    //Balok Kecil Bawah 2
+    glBegin(GL_QUADS);
+    // Bagian depan 
+    glColor3f(250, 245, 239);
+    glVertex3f(-45, -53, 50); 
+    glVertex3f(-45, -57, 50); 
+    glVertex3f(-45, -57, -20); 
+    glVertex3f(-45, -53, -20);
+
+    // Bagian belakang 
+    glColor3f(250, 245, 239);
+    glVertex3f(-50, -53, 50);
+    glVertex3f(-50, -57, 50);
+    glVertex3f(-50, -57, -20);
+    glVertex3f(-50, -53, -20);
+
+    // Bagian atas 
+    glColor3f(250, 245, 239);
+    glVertex3f(50, -53, 50);
+    glVertex3f(45, -53, 50);
+    glVertex3f(45, -53, -20);
+    glVertex3f(50, -53, -20);
+
+    // Bagian bawah 
+    glColor3f(250, 245, 239);
+    glVertex3f(50, -57, 50);
+    glVertex3f(45, -57, 50);
+    glVertex3f(45, -57, -20);
+    glVertex3f(50, -57, -20);
+
+    // Bagian kiri 
+    glColor3f(250, 245, 239);
+    glVertex3f(-50, -53, -25);
+    glVertex3f(-45, -57, -25);
+    glVertex3f(-45, -57, -20);
+    glVertex3f(-50, -53, -20);
+
+    // Bagian kanan 
+    glColor3f(250, 245, 239);
+    glVertex3f(-50, -53, -25);
+    glVertex3f(-45, -57, -25);
+    glVertex3f(-45, -57, -20);
+    glVertex3f(-50, -53, -20);
+
+    //Balok Kecil Bawah 3
+    glBegin(GL_QUADS);
+    // Bagian depan 
+    glColor3f(250, 245, 239);
+    glVertex3f(45, -53, 50); 
+    glVertex3f(45, -57, 50); 
+    glVertex3f(45, -57, -20); 
+    glVertex3f(45, -53, -20); 
+
+    // Bagian belakang 
+    glColor3f(250, 245, 239);
+    glVertex3f(50, -53, 50);
+    glVertex3f(50, -57, 50);
+    glVertex3f(50, -57, -20);
+    glVertex3f(50, -53, -20);
+
+    // Bagian atas 
+    glColor3f(250, 245, 239);
+    glVertex3f(-50, -53, -25);
+    glVertex3f(-50, -57, -25);
+    glVertex3f(-45, -57, -20);
+    glVertex3f(-45, -53, -20);
+
+    // Bagian bawah 
+    glColor3f(250, 245, 239);
+    glVertex3f(-50, -34, -25);
+    glVertex3f(45, -34, -25);
+    glVertex3f(45, -34, -20);
+    glVertex3f(-50, -34, -20);
+
+    // Bagian kiri 
+    glColor3f(250, 245, 239);
+    glVertex3f(-45, -53, -25);
+    glVertex3f(-45, -57, -25);
+    glVertex3f(-45, -57, -20);
+    glVertex3f(-45, -53, -20);
+
+    // Bagian kanan 
+    glColor3f(250, 245, 239);
+    glVertex3f(-45, -53, -25);
+    glVertex3f(-45, -57, -25);
+    glVertex3f(-45, -57, -20);
+    glVertex3f(-45, -53, -20);
+    glEnd();
+
+    glPushMatrix();
+    glPopMatrix();
+    glutSwapBuffers();
+}
+
+int main(int argc, char** argv) {
+    glutInit(&argc, argv);
+    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
+    glutInitWindowPosition(240, 80);
+    glutInitWindowSize(750, 600);
+    glutCreateWindow("3D MEJA LAB GT 303 PENS");
+    myinit();
+    glutDisplayFunc(tampilan);
+    glutMouseFunc(mouse);
+    glutMotionFunc(mouseMotion);
+    glutReshapeFunc(ukur);
+    glutMainLoop();
+}
