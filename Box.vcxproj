@@ -22,7 +22,7 @@ void ukur(int lebar, int tinggi) {
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
     gluPerspective(45, lebar / tinggi, 5, 450);
-    glTranslatef(0, 0, -300);// jarak object dari lembaran kerja
+    glTranslatef(0, 0, -300);// jarak object dari lembar kerja
     glMatrixMode(GL_MODELVIEW);
 }
 void myinit(void) {
@@ -36,15 +36,6 @@ void myinit(void) {
 }
 
 // Fungsi mouse
-void idle()
-{
-    if (!mouseDown)
-    {
-        xrot += 0.3;
-        yrot += 0.4;
-    }
-    glutPostRedisplay();
-}
 
 void mouse(int button, int state, int x, int y)
 {
@@ -68,6 +59,11 @@ void mouseMotion(int x, int y)
     }
 }
 
+// Warna-warna dalam satu variabel
+GLfloat backgroundColor[] = { 0.0, 0.0, 0.0 };  // Warna latar belakang (hitam)
+GLfloat tableColor1[] = { 250.0, 245.0, 239.0 }; // Warna 1
+GLfloat tableColor2[] = { 0.36, 0.18, 0.00 };  // Warna 2
+
 //Coding untuk membuat object
 void tampilan(void) {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -79,7 +75,7 @@ void tampilan(void) {
 
     //ALAS MEJA
     glBegin(GL_POLYGON);//ATAS
-    glColor3f(255, 255, 240);
+    glColor3fv(tableColor1);
     glVertex3f(-52, 15, 58);
     glVertex3f(52, 15, 58);
     glVertex3f(52, 15, -28);
@@ -87,7 +83,7 @@ void tampilan(void) {
     glEnd();
 
     glBegin(GL_POLYGON);//BAWAH
-    glColor3ub(95, 48, 0);
+    glColor3fv(tableColor2);
     glVertex3f(-52, 14, 58);
     glVertex3f(52, 14, 58);
     glVertex3f(52, 14, -28);
@@ -95,7 +91,7 @@ void tampilan(void) {
     glEnd();
 
     glBegin(GL_POLYGON);//SAMPING KANAN
-    glColor3ub(95, 48, 0);
+    glColor3fv(tableColor2);
     glVertex3f(50, 13, 58);
     glVertex3f(50, 15, 58);
     glVertex3f(50, 15, -28);
@@ -103,7 +99,7 @@ void tampilan(void) {
     glEnd();
 
     glBegin(GL_POLYGON);//SAMPING KIRI
-    glColor3ub(95, 48, 0);
+    glColor3fv(tableColor2);
     glVertex3f(-50, 13, 58);
     glVertex3f(-50, 15, 58);
     glVertex3f(-50, 15, -28);
@@ -111,7 +107,7 @@ void tampilan(void) {
     glEnd();
 
     glBegin(GL_POLYGON);//DEPAN
-    glColor3ub(95, 48, 0);
+    glColor3fv(tableColor2);
     glVertex3f(-50, 13, 58);
     glVertex3f(-50, 15, 58);
     glVertex3f(50, 15, 58);
@@ -119,7 +115,7 @@ void tampilan(void) {
     glEnd();
 
     glBegin(GL_POLYGON);//BELAKANG
-    glColor3ub(95, 48, 0);
+    glColor3fv(tableColor2);
     glVertex3f(-50, 13, -28);
     glVertex3f(-50, 15, -28);
     glVertex3f(50, 15, -28);
@@ -128,7 +124,7 @@ void tampilan(void) {
 
     //KAKI MEJA 1
     glBegin(GL_POLYGON);//ALAS BAWAH
-    glColor3f(250, 245, 239);
+    glColor3fv(tableColor1);
     glVertex3f(-50, -57, 55);
     glVertex3f(-45, -57, 55);
     glVertex3f(-45, -57, 50);
@@ -136,7 +132,7 @@ void tampilan(void) {
     glEnd();
 
     glBegin(GL_POLYGON);//DEPAN
-    glColor3f(250, 245, 239);
+    glColor3fv(tableColor1);
     glVertex3f(-50, 13, 55);
     glVertex3f(-45, 13, 55);
     glVertex3f(-45, -57, 55);
@@ -144,7 +140,7 @@ void tampilan(void) {
     glEnd();
 
     glBegin(GL_POLYGON);//BELAKANG
-    glColor3f(250, 245, 239);
+    glColor3fv(tableColor1);
     glVertex3f(-50, 13, 50);
     glVertex3f(-45, 13, 50);
     glVertex3f(-45, -57, 50);
@@ -152,7 +148,7 @@ void tampilan(void) {
     glEnd();
 
     glBegin(GL_POLYGON);//KIRI
-    glColor3f(250, 245, 239);
+    glColor3fv(tableColor1);
     glVertex3f(-50, 13, 55);
     glVertex3f(-50, -57, 55);
     glVertex3f(-50, -57, 50);
@@ -160,7 +156,7 @@ void tampilan(void) {
     glEnd();
 
     glBegin(GL_POLYGON);//KANAN
-    glColor3f(250, 245, 239);
+    glColor3fv(tableColor1);
     glVertex3f(-45, 13, 55);
     glVertex3f(-45, -57, 55);
     glVertex3f(-45, -57, 50);
@@ -169,48 +165,48 @@ void tampilan(void) {
 
     //KAKI MEJA 2
     glBegin(GL_POLYGON);//ALAS BAWAH
-    glColor3f(250, 245, 239);
-    glVertex3f(50, -57, 55); 
+    glColor3fv(tableColor1);
+    glVertex3f(50, -57, 55);
     glVertex3f(45, -57, 55);
-    glVertex3f(45, -57, 50); 
-    glVertex3f(50, -57, 50); 
+    glVertex3f(45, -57, 50);
+    glVertex3f(50, -57, 50);
     glEnd();
 
     glBegin(GL_POLYGON);//DEPAN
-    glColor3f(250, 245, 239);
+    glColor3fv(tableColor1);
     glVertex3f(50, 13, 55);
     glVertex3f(45, 13, 55);
-    glVertex3f(45, -57, 55); 
-    glVertex3f(50, -57, 55); 
+    glVertex3f(45, -57, 55);
+    glVertex3f(50, -57, 55);
     glEnd();
 
     glBegin(GL_POLYGON);//BELAKANG
-    glColor3f(250, 245, 239);
-    glVertex3f(50, 13, 50); 
-    glVertex3f(45, 13, 50); 
-    glVertex3f(45, -57, 50); 
-    glVertex3f(50, -57, 50); 
+    glColor3fv(tableColor1);
+    glVertex3f(50, 13, 50);
+    glVertex3f(45, 13, 50);
+    glVertex3f(45, -57, 50);
+    glVertex3f(50, -57, 50);
     glEnd();
 
     glBegin(GL_POLYGON);//KIRI
-    glColor3f(250, 245, 239);
-    glVertex3f(50, 13, 50); 
-    glVertex3f(50, -57, 50); 
-    glVertex3f(50, -57, 55); 
+    glColor3fv(tableColor1);
+    glVertex3f(50, 13, 50);
+    glVertex3f(50, -57, 50);
+    glVertex3f(50, -57, 55);
     glVertex3f(50, 13, 55);
     glEnd();
 
     glBegin(GL_POLYGON);//KANAN
-    glColor3f(250, 245, 239);
-    glVertex3f(45, 13, 50); 
-    glVertex3f(45, -57, 50); 
-    glVertex3f(45, -57, 55); 
+    glColor3fv(tableColor1);
+    glVertex3f(45, 13, 50);
+    glVertex3f(45, -57, 50);
+    glVertex3f(45, -57, 55);
     glVertex3f(45, 13, 55);
     glEnd();
 
     //KAKI MEJA 3
     glBegin(GL_POLYGON);//ALAS BAWAH
-    glColor3f(250, 245, 239);
+    glColor3fv(tableColor1);
     glVertex3f(-50, -57, -20);
     glVertex3f(-45, -57, -20);
     glVertex3f(-45, -57, -25);
@@ -218,7 +214,7 @@ void tampilan(void) {
     glEnd();
 
     glBegin(GL_POLYGON);//DEPAN
-    glColor3f(250, 245, 239);
+    glColor3fv(tableColor1);
     glVertex3f(-50, 13, -20);
     glVertex3f(-45, 13, -20);
     glVertex3f(-45, -57, -20);
@@ -226,7 +222,7 @@ void tampilan(void) {
     glEnd();
 
     glBegin(GL_POLYGON);//BELAKANG
-    glColor3f(250, 245, 239);
+    glColor3fv(tableColor1);
     glVertex3f(-50, 13, -25);
     glVertex3f(-45, 13, -25);
     glVertex3f(-45, -57, -25);
@@ -234,7 +230,7 @@ void tampilan(void) {
     glEnd();
 
     glBegin(GL_POLYGON);//KIRI
-    glColor3f(250, 245, 239);
+    glColor3fv(tableColor1);
     glVertex3f(-50, 13, -20);
     glVertex3f(-50, -57, -20);
     glVertex3f(-50, -57, -25);
@@ -242,7 +238,7 @@ void tampilan(void) {
     glEnd();
 
     glBegin(GL_POLYGON);//KANAN
-    glColor3f(250, 245, 239);
+    glColor3fv(tableColor1);
     glVertex3f(-45, 13, -20);
     glVertex3f(-45, -57, -20);
     glVertex3f(-45, -57, -25);
@@ -251,7 +247,7 @@ void tampilan(void) {
 
     //KAKI MEJA 4
     glBegin(GL_POLYGON);//ALAS BAWAH
-    glColor3f(250, 245, 239);
+    glColor3fv(tableColor1);
     glVertex3f(50, -57, -20);
     glVertex3f(45, -57, -20);
     glVertex3f(45, -57, -25);
@@ -259,7 +255,7 @@ void tampilan(void) {
     glEnd();
 
     glBegin(GL_POLYGON);//DEPAN
-    glColor3f(250, 245, 239);
+    glColor3fv(tableColor1);
     glVertex3f(50, 13, -20);
     glVertex3f(45, 13, -20);
     glVertex3f(45, -57, -20);
@@ -267,7 +263,7 @@ void tampilan(void) {
     glEnd();
 
     glBegin(GL_POLYGON);//BELAKANG
-    glColor3f(250, 245, 239);
+    glColor3fv(tableColor1);
     glVertex3f(50, 13, -25);
     glVertex3f(45, 13, -25);
     glVertex3f(45, -57, -25);
@@ -275,7 +271,7 @@ void tampilan(void) {
     glEnd();
 
     glBegin(GL_POLYGON);//KIRI
-    glColor3f(250, 245, 239);
+    glColor3fv(tableColor1);
     glVertex3f(50, 13, -20);
     glVertex3f(50, -57, -20);
     glVertex3f(50, -57, -25);
@@ -283,7 +279,7 @@ void tampilan(void) {
     glEnd();
 
     glBegin(GL_POLYGON);//KANAN
-    glColor3f(250, 245, 239);
+    glColor3fv(tableColor1);
     glVertex3f(45, 13, -20);
     glVertex3f(45, -57, -20);
     glVertex3f(45, -57, -25);
@@ -293,123 +289,123 @@ void tampilan(void) {
     //Sandaran Meja
     glBegin(GL_QUADS);
     // Bagian belakang 
-    glColor3ub(95, 48, 0);
+    glColor3fv(tableColor2);
     glVertex3f(-45, 9, -25);
     glVertex3f(-45, -30, -25);
     glVertex3f(45, -30, -25);
     glVertex3f(45, 9, -25);
 
     // Bagian bawah 
-    glColor3f(250, 245, 239);
+    glColor3fv(tableColor1);
     glVertex3f(-45, -13, -25);
     glVertex3f(45, -30, -25);
     glVertex3f(45, -30, -20);
     glVertex3f(-45, -13, -20);
 
     // Bagian atas 
-    glColor3f(250, 245, 239);
+    glColor3fv(tableColor1);
     glVertex3f(-45, 9, -25);
     glVertex3f(45, 9, -25);
     glVertex3f(45, 9, -20);
     glVertex3f(-45, 9, -20);
 
     // Bagian kiri 
-    glColor3f(250, 245, 239);
+    glColor3fv(tableColor1);
     glVertex3f(-45, 9, -25);
     glVertex3f(-45, -30, -25);
     glVertex3f(-45, -30, -20);
     glVertex3f(-45, 9, -20);
 
     // Bagian kanan
-    glColor3f(250, 245, 239);
+    glColor3fv(tableColor1);
     glVertex3f(45, 9, -25);
     glVertex3f(45, -30, -25);
     glVertex3f(45, -30, -20);
     glVertex3f(45, 9, -20);
 
     // Bagian depan
-    glColor3ub(95, 48, 0);
-    glVertex3f(-45, 9, -20); 
-    glVertex3f(-45, -30, -20); 
-    glVertex3f(45, -30, -20); 
-    glVertex3f(45, 9, -20); 
+    glColor3fv(tableColor2);
+    glVertex3f(-45, 9, -20);
+    glVertex3f(-45, -30, -20);
+    glVertex3f(45, -30, -20);
+    glVertex3f(45, 9, -20);
     glEnd();
 
     // Kotak kecil 1
     glBegin(GL_QUADS);
-    glColor3f(250, 245, 239);
-    glVertex3f(-45, 9, -19.5); 
-    glVertex3f(-45, 1, -19.5); 
-    glVertex3f(-38, 1, -19.5); 
-    glVertex3f(-38, 9, -19.5); 
+    glColor3fv(tableColor1);
+    glVertex3f(-45, 9, -19.5);
+    glVertex3f(-45, 1, -19.5);
+    glVertex3f(-38, 1, -19.5);
+    glVertex3f(-38, 9, -19.5);
     glEnd();
 
     // Kotak kecil 2
     glBegin(GL_QUADS);
-    glColor3f(250, 245, 239);
-    glVertex3f(38, 9, -19.5); 
-    glVertex3f(38, 1, -19.5); 
-    glVertex3f(45, 1, -19.5); 
-    glVertex3f(45, 9, -19.5); 
+    glColor3fv(tableColor1);
+    glVertex3f(38, 9, -19.5);
+    glVertex3f(38, 1, -19.5);
+    glVertex3f(45, 1, -19.5);
+    glVertex3f(45, 9, -19.5);
     glEnd();
 
     // Kotak kecil 3
     glBegin(GL_QUADS);
-    glColor3f(250, 245, 239);
-    glVertex3f(-45, -30, -19.5); 
-    glVertex3f(-45, -22, -19.5); 
-    glVertex3f(-38, -22, -19.5); 
-    glVertex3f(-38, -30, -19.5); 
+    glColor3fv(tableColor1);
+    glVertex3f(-45, -30, -19.5);
+    glVertex3f(-45, -22, -19.5);
+    glVertex3f(-38, -22, -19.5);
+    glVertex3f(-38, -30, -19.5);
     glEnd();
 
     // Kotak kecil 4
     glBegin(GL_QUADS);
-    glColor3f(250, 245, 239);
-    glVertex3f(38, -30, -19.5); 
-    glVertex3f(38, -22, -19.5); 
-    glVertex3f(45, -22, -19.5); 
-    glVertex3f(45, -30, -19.5); 
+    glColor3fv(tableColor1);
+    glVertex3f(38, -30, -19.5);
+    glVertex3f(38, -22, -19.5);
+    glVertex3f(45, -22, -19.5);
+    glVertex3f(45, -30, -19.5);
     glEnd();
 
     //Balok Kecil Atas 1
     glBegin(GL_QUADS);
     // Bagian depan 
-    glColor3f(250, 245, 239);
-    glVertex3f(-45, 13, -20); 
-    glVertex3f(-45, 9, -20); 
-    glVertex3f(45, 9, -20); 
-    glVertex3f(45, 13, -20); 
+    glColor3fv(tableColor1);
+    glVertex3f(-45, 13, -20);
+    glVertex3f(-45, 9, -20);
+    glVertex3f(45, 9, -20);
+    glVertex3f(45, 13, -20);
 
     // Bagian belakang 
-    glColor3f(250, 245, 239);
+    glColor3fv(tableColor1);
     glVertex3f(-45, 13, -25);
     glVertex3f(-45, 9, -25);
     glVertex3f(45, 9, -25);
     glVertex3f(45, 13, -25);
 
     // Bagian atas 
-    glColor3f(250, 245, 239);
+    glColor3fv(tableColor1);
     glVertex3f(-45, 13, -25);
     glVertex3f(45, 9, -25);
     glVertex3f(45, 9, -20);
     glVertex3f(-45, 13, -20);
 
     // Bagian bawah 
-    glColor3f(250, 245, 239);
+    glColor3fv(tableColor1);
     glVertex3f(-45, 9, -25);
     glVertex3f(45, 9, -25);
     glVertex3f(45, 9, -20);
     glVertex3f(-45, 9, -20);
 
     // Bagian kiri 
-    glColor3f(250, 245, 239);
+    glColor3fv(tableColor1);
     glVertex3f(-45, 13, -25);
     glVertex3f(-45, 9, -25);
     glVertex3f(-45, 9, -20);
     glVertex3f(-45, 13, -20);
 
     // Bagian kanan 
-    glColor3f(250, 245, 239);
+    glColor3fv(tableColor1);
     glVertex3f(45, 13, -25);
     glVertex3f(45, 9, -25);
     glVertex3f(45, 9, -20);
@@ -419,42 +415,42 @@ void tampilan(void) {
     //Balok Kecil Atas 2
     glBegin(GL_QUADS);
     // Bagian depan 
-    glColor3f(250, 245, 239);
-    glVertex3f(-45, -30, -20); 
-    glVertex3f(-45, -34, -20); 
-    glVertex3f(45, -34, -20); 
-    glVertex3f(45, -30, -20); 
+    glColor3fv(tableColor1);
+    glVertex3f(-45, -30, -20);
+    glVertex3f(-45, -34, -20);
+    glVertex3f(45, -34, -20);
+    glVertex3f(45, -30, -20);
 
     // Bagian belakang 
-    glColor3f(250, 245, 239);
+    glColor3fv(tableColor1);
     glVertex3f(-45, -30, -25);
     glVertex3f(-45, -34, -25);
     glVertex3f(45, -34, -25);
     glVertex3f(45, -30, -25);
 
     // Bagian atas 
-    glColor3f(250, 245, 239);
+    glColor3fv(tableColor1);
     glVertex3f(-50, 13, 50);
     glVertex3f(-45, 13, 50);
     glVertex3f(-45, 13, -20);
     glVertex3f(-50, 13, -20);
 
     // Bagian bawah 
-    glColor3f(250, 245, 239);
+    glColor3fv(tableColor1);
     glVertex3f(-50, 9, 50);
     glVertex3f(-45, 9, 50);
     glVertex3f(-45, 9, -20);
     glVertex3f(-50, 9, -20);
 
     // Bagian kiri 
-    glColor3f(250, 245, 239);
+    glColor3fv(tableColor1);
     glVertex3f(-45, 13, 50);
     glVertex3f(-45, 9, 50);
     glVertex3f(-45, 9, -20);
     glVertex3f(-45, 13, -20);
 
     // Bagian kanan 
-    glColor3f(250, 245, 239);
+    glColor3fv(tableColor1);
     glVertex3f(-50, 13, 50);
     glVertex3f(-50, 9, 50);
     glVertex3f(-50, 9, -20);
@@ -464,42 +460,42 @@ void tampilan(void) {
     //Balok Kecil Atas 3
     glBegin(GL_QUADS);
     // Bagian depan 
-    glColor3f(250, 245, 239);
-    glVertex3f(-45, -53, 50); 
-    glVertex3f(-45, -57, 50); 
-    glVertex3f(-45, -57, -20); 
-    glVertex3f(-45, -53, -20); 
+    glColor3fv(tableColor1);
+    glVertex3f(-45, -53, 50);
+    glVertex3f(-45, -57, 50);
+    glVertex3f(-45, -57, -20);
+    glVertex3f(-45, -53, -20);
 
     // Bagian belakang 
-    glColor3f(250, 245, 239);
+    glColor3fv(tableColor1);
     glVertex3f(-50, -53, 50);
     glVertex3f(-50, -57, 50);
     glVertex3f(-50, -57, -20);
     glVertex3f(-50, -53, -20);
 
     // Bagian atas 
-    glColor3f(250, 245, 239);
+    glColor3fv(tableColor1);
     glVertex3f(50, 13, 50);
     glVertex3f(45, 13, 50);
     glVertex3f(45, 13, -20);
     glVertex3f(50, 13, -20);
 
     // Bagian bawah 
-    glColor3f(250, 245, 239);
+    glColor3fv(tableColor1);
     glVertex3f(50, 9, 50);
     glVertex3f(45, 9, 50);
     glVertex3f(45, 9, -20);
     glVertex3f(50, 9, -20);
 
     // Bagian kiri 
-    glColor3f(250, 245, 239);
+    glColor3fv(tableColor1);
     glVertex3f(50, 13, 50);
     glVertex3f(50, 9, 50);
     glVertex3f(50, 9, -20);
     glVertex3f(50, 13, -20);
 
     // Bagian kanan 
-    glColor3f(250, 245, 239);
+    glColor3fv(tableColor1);
     glVertex3f(45, 13, 50);
     glVertex3f(45, 9, 50);
     glVertex3f(45, 9, -20);
@@ -508,42 +504,42 @@ void tampilan(void) {
     //Balok Kecil Atas 4
     glBegin(GL_QUADS);
     // Bagian depan 
-    glColor3f(250, 245, 239);
-    glVertex3f(-45, 13, 55); 
-    glVertex3f(-45, 9, 55); 
-    glVertex3f(45, 9, 55); 
-    glVertex3f(45, 13, 55); 
+    glColor3fv(tableColor1);
+    glVertex3f(-45, 13, 55);
+    glVertex3f(-45, 9, 55);
+    glVertex3f(45, 9, 55);
+    glVertex3f(45, 13, 55);
 
     // Bagian belakang 
-    glColor3f(250, 245, 239);
+    glColor3fv(tableColor1);
     glVertex3f(-45, 13, 50);
     glVertex3f(-45, 9, 50);
     glVertex3f(45, 9, 50);
     glVertex3f(45, 13, 50);
 
     // Bagian atas 
-    glColor3f(250, 245, 239);
+    glColor3fv(tableColor1);
     glVertex3f(-45, 13, 55);
     glVertex3f(45, 13, 55);
     glVertex3f(45, 13, 50);
     glVertex3f(-45, 13, 50);
 
     // Bagian bawah 
-    glColor3f(250, 245, 239);
+    glColor3fv(tableColor1);
     glVertex3f(-45, 9, 55);
     glVertex3f(45, 9, 55);
     glVertex3f(45, 9, 50);
     glVertex3f(-45, 9, 50);
 
     // Bagian kiri 
-    glColor3f(250, 245, 239);
+    glColor3fv(tableColor1);
     glVertex3f(-45, 13, 55);
     glVertex3f(-45, 9, 55);
     glVertex3f(-45, 9, 50);
     glVertex3f(-45, 13, 50);
 
     // Bagian kanan 
-    glColor3f(250, 245, 239);
+    glColor3fv(tableColor1);
     glVertex3f(45, 13, 55);
     glVertex3f(45, 9, 55);
     glVertex3f(45, 9, 50);
@@ -553,42 +549,42 @@ void tampilan(void) {
     //Balok Kecil Bawah 1
     glBegin(GL_QUADS);
     // Bagian depan 
-    glColor3f(250, 245, 239);
-    glVertex3f(-45, -30, -20); 
-    glVertex3f(-45, -34, -20); 
-    glVertex3f(45, -34, -20); 
-    glVertex3f(45, -30, -20); 
+    glColor3fv(tableColor1);
+    glVertex3f(-45, -30, -20);
+    glVertex3f(-45, -34, -20);
+    glVertex3f(45, -34, -20);
+    glVertex3f(45, -30, -20);
 
     // Bagian belakang 
-    glColor3f(250, 245, 239);
+    glColor3fv(tableColor1);
     glVertex3f(-45, -30, -25);
     glVertex3f(-45, -34, -25);
     glVertex3f(45, -34, -25);
     glVertex3f(45, -30, -25);
 
     // Bagian atas 
-    glColor3f(250, 245, 239);
+    glColor3fv(tableColor1);
     glVertex3f(-50, -53, 50);
     glVertex3f(-45, -53, 50);
     glVertex3f(-45, -53, -20);
     glVertex3f(-50, -53, -20);
 
     // Bagian bawah 
-    glColor3f(250, 245, 239);
+    glColor3fv(tableColor1);
     glVertex3f(-50, -57, 50);
     glVertex3f(-45, -57, 50);
     glVertex3f(-45, -57, -20);
     glVertex3f(-50, -57, -20);
 
     // Bagian kiri 
-    glColor3f(250, 245, 239);
+    glColor3fv(tableColor1);
     glVertex3f(-45, -30, -25);
     glVertex3f(-45, -34, -25);
     glVertex3f(-45, -34, -20);
     glVertex3f(-45, -30, -20);
 
     // Bagian kanan 
-    glColor3f(250, 245, 239);
+    glColor3fv(tableColor1);
     glVertex3f(45, -30, -25);
     glVertex3f(45, -34, -25);
     glVertex3f(45, -34, -20);
@@ -598,42 +594,42 @@ void tampilan(void) {
     //Balok Kecil Bawah 2
     glBegin(GL_QUADS);
     // Bagian depan 
-    glColor3f(250, 245, 239);
-    glVertex3f(-45, -53, 50); 
-    glVertex3f(-45, -57, 50); 
-    glVertex3f(-45, -57, -20); 
+    glColor3fv(tableColor1);
+    glVertex3f(-45, -53, 50);
+    glVertex3f(-45, -57, 50);
+    glVertex3f(-45, -57, -20);
     glVertex3f(-45, -53, -20);
 
     // Bagian belakang 
-    glColor3f(250, 245, 239);
+    glColor3fv(tableColor1);
     glVertex3f(-50, -53, 50);
     glVertex3f(-50, -57, 50);
     glVertex3f(-50, -57, -20);
     glVertex3f(-50, -53, -20);
 
     // Bagian atas 
-    glColor3f(250, 245, 239);
+    glColor3fv(tableColor1);
     glVertex3f(50, -53, 50);
     glVertex3f(45, -53, 50);
     glVertex3f(45, -53, -20);
     glVertex3f(50, -53, -20);
 
     // Bagian bawah 
-    glColor3f(250, 245, 239);
+    glColor3fv(tableColor1);
     glVertex3f(50, -57, 50);
     glVertex3f(45, -57, 50);
     glVertex3f(45, -57, -20);
     glVertex3f(50, -57, -20);
 
     // Bagian kiri 
-    glColor3f(250, 245, 239);
+    glColor3fv(tableColor1);
     glVertex3f(-50, -53, -25);
     glVertex3f(-45, -57, -25);
     glVertex3f(-45, -57, -20);
     glVertex3f(-50, -53, -20);
 
     // Bagian kanan 
-    glColor3f(250, 245, 239);
+    glColor3fv(tableColor1);
     glVertex3f(-50, -53, -25);
     glVertex3f(-45, -57, -25);
     glVertex3f(-45, -57, -20);
@@ -642,50 +638,48 @@ void tampilan(void) {
     //Balok Kecil Bawah 3
     glBegin(GL_QUADS);
     // Bagian depan 
-    glColor3f(250, 245, 239);
-    glVertex3f(45, -53, 50); 
-    glVertex3f(45, -57, 50); 
-    glVertex3f(45, -57, -20); 
-    glVertex3f(45, -53, -20); 
+    glColor3fv(tableColor1);
+    glVertex3f(45, -53, 50);
+    glVertex3f(45, -57, 50);
+    glVertex3f(45, -57, -20);
+    glVertex3f(45, -53, -20);
 
     // Bagian belakang 
-    glColor3f(250, 245, 239);
+    glColor3fv(tableColor1);
     glVertex3f(50, -53, 50);
     glVertex3f(50, -57, 50);
     glVertex3f(50, -57, -20);
     glVertex3f(50, -53, -20);
 
     // Bagian atas 
-    glColor3f(250, 245, 239);
+    glColor3fv(tableColor1);
     glVertex3f(-50, -53, -25);
     glVertex3f(-50, -57, -25);
     glVertex3f(-45, -57, -20);
     glVertex3f(-45, -53, -20);
 
     // Bagian bawah 
-    glColor3f(250, 245, 239);
+    glColor3fv(tableColor1);
     glVertex3f(-50, -34, -25);
     glVertex3f(45, -34, -25);
     glVertex3f(45, -34, -20);
     glVertex3f(-50, -34, -20);
 
     // Bagian kiri 
-    glColor3f(250, 245, 239);
+    glColor3fv(tableColor1);
     glVertex3f(-45, -53, -25);
     glVertex3f(-45, -57, -25);
     glVertex3f(-45, -57, -20);
     glVertex3f(-45, -53, -20);
 
     // Bagian kanan 
-    glColor3f(250, 245, 239);
+    glColor3fv(tableColor1);
     glVertex3f(-45, -53, -25);
     glVertex3f(-45, -57, -25);
     glVertex3f(-45, -57, -20);
     glVertex3f(-45, -53, -20);
     glEnd();
 
-    glPushMatrix();
-    glPopMatrix();
     glutSwapBuffers();
 }
 
